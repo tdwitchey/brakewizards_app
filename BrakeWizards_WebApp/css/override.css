@@ -1,0 +1,72 @@
+.spacer{
+    padding: 0.5em 0em 0.5em 0em;
+}
+
+.menu-list a{
+    color: #ffffff;
+}
+
+.fullheight{
+    height: 100vh;
+}
+
+.override-fixed{
+    z-index: 2;
+    width: 100%;
+    position: fixed;
+    top: 0em;
+}
+
+#checkoutCard {
+    background-image: url('../images/stripecheckout.png');
+    height: 25em;
+    background-size: cover;
+    background-position: center;
+}
+
+#checkoutCardButton{
+    position: relative;
+    top: 50%;
+}
+
+.override-contact-button{
+    background-image: url(images/env_icon.png);
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    z-index: 10;
+}
+
+.override-contact-panel{
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    z-index: 11;
+}
+
+.override-contact-close{
+    position: relative;
+    top: 0em;
+    right: 0em;
+}
+
+.override-padding-sides-narrow{
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.override-card-height-progress{
+    height: 300px;
+}
+
+.override-card-height-payment {
+    height: 525px;
+}
+
+.override-margin-sides-narrow {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+

@@ -1,0 +1,115 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="App_Main.master.cs" Inherits="BrakeWizards_WebApp.App_Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="css/bulma.css" rel="stylesheet" />
+    <link href="css/override.css" rel="stylesheet" />
+</head>
+<body>
+<form id="main" runat="server">
+    <div class="columns is-gapless">
+        <!---Mobile Menu--->
+        <div class="column is-hidden-desktop">
+            <div class="level has-background-dark is-mobile override-fixed">
+                <div class="level-item">
+                    <h1 class="title has-text-white">Brake Wizards</h1>
+                </div>
+                <div class="level-item">
+                    <div class="dropdown is-right is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button is-link" aria-haspopup="true" aria-controls="dropdown-menu">
+                                Menu
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                            <div class="dropdown-content">
+                                <div class="dropdown-item">
+                                    <a href="dashboard.aspx">Home</a>
+                                </div>
+                                <div class="dropdown-item">
+                                    <a href="account_tab_personal.aspx">My Account</a>
+                                </div>
+                                <div class="dropdown-item">
+                                    <a href="payment.aspx">Make a Payment</a>
+                                </div>
+                                <div class="dropdown-item">
+                                    <a href="check_progress.aspx">Check Incident Progress</a>
+                                </div>
+                                <div class="dropdown-item">
+                                    <a href="request_service.aspx">Request Service</a>
+                                </div>
+                                <hr />
+                                <div class="dropdown-item">
+                                    <asp:LinkButton ID="logoutButtonMobile" runat="server" OnClick="logoutButton_Click">Logout</asp:LinkButton>
+                                </div>
+                                <div class="dropdown-item">
+                                    <a href="brakewizards.com">Back to Brakewizards.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="spacer"></div>
+                <div class="spacer"></div>
+                <div class="spacer"></div>
+                <div class="spacer"></div>
+                <div class="level">
+                    <div class="level-item">
+                        <asp:ContentPlaceHolder ID="MobileTitle" runat="server"></asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            <hr>
+        </div>
+        <!---Mobile Menu End--->
+
+        <!---Desktop Sidebar--->
+        <div class="column is-2 has-background-dark fullheight is-hidden-mobile">
+            <div class="card has-background-dark">
+                <div class="card-image">
+                    <div class="level">
+                        <div class="level-item">
+                            <figure class="image is-128x128">
+                                <img class="is-rounded" src="images/logo-white.png" alt="BrakeWizards Logo"/>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-footer-item subtitle is-7 has-text-white">
+                        <p>Welcome back, <asp:Label ID="welcomeLabel" runat="server" Text=""></asp:Label>!</p>
+                    </div>
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="SideMenuContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        <!---Desktop Sidebar End--->
+
+        <!---Main Content--->
+        <div class="column">
+            <nav class="navbar is-light is-hidden-mobile">
+                <div class="navbar-start">
+                    <div class="navbar-item">
+                        <p class="subtitle">Customer Dashboard</p>
+                    </div>
+                    <div class="navbar-item">
+                        <asp:LinkButton ID="logoutButton" runat="server" OnClick="logoutButton_Click">Logout</asp:LinkButton>
+                    </div>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <a href="brakewizards.com">Back to Brakewizards.com</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="spacer"></div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        <!---Main Content End--->
+    </div>
+</form>
+</body>
+</html>
